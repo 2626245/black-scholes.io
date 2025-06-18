@@ -1,0 +1,112 @@
+# 🧠 Black-Scholes Option Pricing App
+
+This is a full-stack educational web application designed to **predict European option prices** using the **Black-Scholes model**. It leverages machine learning techniques (specifically **Artificial Neural Networks**) and incorporates the theoretical foundations of option pricing models.
+
+---
+
+## 📈 About the Model
+
+The **Black-Scholes formula** is one of the most widely used models for pricing derivatives. However, like many financial models, it is built on a set of simplifying assumptions that may not hold in real markets.
+
+### ⚙️ Model Assumptions
+
+This implementation assumes the following:
+- The underlying asset follows **Geometric Brownian Motion (GBM)**.
+- There is **no arbitrage** opportunity in the market.
+- The option is **European-style** (can only be exercised at maturity).
+- The asset has **constant volatility** (or volatility as a function of moneyness and time).
+- The risk-free interest rate is constant.
+- The market is frictionless (no transaction costs).
+- The dividend yield `q` is set to **0** for simplicity.
+
+### 📐 The Black-Scholes Equation
+
+The price of a **call option** under the Black-Scholes model is given by:
+
+#### Equation 5-1:
+
+\[
+C = S e^{-qτ} Φ(d_1) - e^{-rτ} K Φ(d_2)
+\]
+
+where:
+
+\[
+d_1 = \frac{\ln(S/K) + (r - q + \frac{σ^2}{2}) τ}{σ\sqrt{τ}}, \quad
+d_2 = d_1 - σ\sqrt{τ}
+\]
+
+To simplify, we use:
+
+- **Moneyness**: \( M = \frac{K}{S} \)
+- **Dividend yield**: \( q = 0 \)
+
+### ✅ Simplified Equation:
+
+\[
+C = Φ\left(\frac{-\ln(M)+(r+\frac{σ^2}{2})τ}{σ\sqrt{τ}}\right) - M e^{-rτ} Φ\left(\frac{-\ln(M)+(r-\frac{σ^2}{2})τ}{σ\sqrt{τ}}\right)
+\]
+
+This form highlights that **moneyness**, **volatility**, and **time to maturity** are key factors.
+
+---
+
+## 📊 Volatility Surface Assumption
+
+Since volatility is not constant in real markets, we simulate it using a **volatility surface**. The assumed structure is:
+
+#### Equation 5-2:
+
+\[
+σ(M, τ) = σ₀ + ατ + β(M - 1)^2
+\]
+
+Where:
+- \( M \): Moneyness
+- \( τ \): Time to maturity
+- \( σ₀, α, β \): Constants controlling base level and curvature of the surface
+
+This captures **volatility smiles/skews**, which are observed in real options markets.
+
+---
+
+## 🧠 Machine Learning Implementation
+
+We train an **Artificial Neural Network (ANN)** to learn the option pricing function.
+
+### Model Training:
+- Implemented in **Jupyter Notebook**
+- Data can be:
+  - **Real-world options data**
+  - **Synthetic data**, based on the simplified Black-Scholes formula  
+    > To use synthetic data, **uncomment the relevant code block** in the notebook
+
+### Inputs:
+- Moneyness (M)
+- Time to maturity (τ)
+- Volatility (σ)
+
+### Output:
+- Predicted option price (C)
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer         | Technology          |
+|---------------|---------------------|
+| Frontend      | ReactJS             |
+| Backend API   | Python (Flask)      |
+| ML Model      | Artificial Neural Network (ANN) |
+| Dev Tools     | Jupyter Notebook    |
+| Data          | Synthetic + Real Options Data   |
+
+---
+
+## 🧪 Running the App
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/2626245/black-scholes.io.git
+cd black-scholes.io
