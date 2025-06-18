@@ -110,3 +110,49 @@ We train an **Artificial Neural Network (ANN)** to learn the option pricing func
 ```bash
 git clone https://github.com/2626245/black-scholes.io.git
 cd black-scholes.io
+npm install
+python server.py
+Make sure Flask is installed and the server runs on a port accessible from your frontend (e.g. http://localhost:5000).
+npm run dev
+
+
+##📓 Jupyter Notebook Details
+The training logic and data preprocessing are included in the notebook.
+
+You can customize:
+
+Volatility surface parameters
+
+Network architecture
+
+Dataset source (real vs. synthetic)
+
+If you prefer to test with synthetic data, uncomment the lines of code that generate it within the notebook.
+
+📢 Disclaimer
+This application is for educational purposes only and does not constitute financial advice.
+
+⚠️ The assumptions behind the Black-Scholes model do not always hold in real-world markets.
+
+For better real-world modeling, consider:
+
+Merton Jump-Diffusion Model
+
+Stochastic Volatility Models (e.g., Heston Model)
+
+Monte Carlo Simulations
+
+Implied Volatility Calibration from Market Prices
+
+🤝 Contributing
+We welcome contributions!
+
+If you'd like to:
+
+Improve the prediction model
+
+Enhance the UI
+
+Add new pricing models
+
+Feel free to fork the repository and submit a pull request.
