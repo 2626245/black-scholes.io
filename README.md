@@ -1,1 +1,1 @@
-# black-scholes.io
+# black-scholes
