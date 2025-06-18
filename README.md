@@ -1,4 +1,3 @@
-```markdown
 # 🧠 Black-Scholes Option Pricing App
 
 This is a full-stack educational web application designed to **predict European option prices** using the **Black-Scholes model**. It leverages machine learning techniques (specifically **Artificial Neural Networks**) and incorporates the theoretical foundations of option pricing models.
@@ -142,4 +141,3 @@ If you'd like to:
 - Add new pricing models
 
 Feel free to fork the repository and submit a pull request.
-```
