@@ -1,14 +1,14 @@
-# 🧠 Black-Scholes Option Pricing App
+#  Black-Scholes Option Pricing App
 
 This is a full-stack educational web application designed to **predict European option prices** using the **Black-Scholes model**. It leverages machine learning techniques (specifically **Artificial Neural Networks**) and incorporates the theoretical foundations of option pricing models.
 
 ---
 
-## 📈 About the Model
+##  About the Model
 
 The **Black-Scholes formula** is one of the most widely used models for pricing derivatives. However, like many financial models, it is built on a set of simplifying assumptions that may not hold in real markets.
 
-### ⚙️ Model Assumptions
+###  Model Assumptions
 
 This implementation assumes the following:
 - The underlying asset follows **Geometric Brownian Motion (GBM)**.
@@ -19,7 +19,7 @@ This implementation assumes the following:
 - The market is frictionless (no transaction costs).
 - The dividend yield `q` is set to **0** for simplicity.
 
-### 📐 The Black-Scholes Equation
+###  The Black-Scholes Equation
 
 The price of a **call option** under the Black-Scholes model is given by:
 
@@ -36,7 +36,7 @@ To simplify, we use:
 - **Moneyness**: $M = \frac{K}{S}$
 - **Dividend yield**: $q = 0$
 
-### ✅ Simplified Equation:
+###  Simplified Equation:
 
 $$C = \Phi\left(\frac{-\ln(M)+(r+\frac{\sigma^2}{2})\tau}{\sigma\sqrt{\tau}}\right) - M e^{-r\tau} \Phi\left(\frac{-\ln(M)+(r-\frac{\sigma^2}{2})\tau}{\sigma\sqrt{\tau}}\right)$$
 
@@ -44,7 +44,7 @@ This form highlights that **moneyness**, **volatility**, and **time to maturity*
 
 ---
 
-## 📊 Volatility Surface Assumption
+##  Volatility Surface Assumption
 
 Since volatility is not constant in real markets, we simulate it using a **volatility surface**. The assumed structure is:
 
@@ -61,7 +61,7 @@ This captures **volatility smiles/skews**, which are observed in real options ma
 
 ---
 
-## 🧠 Machine Learning Implementation
+##  Machine Learning Implementation
 
 We train an **Artificial Neural Network (ANN)** to learn the option pricing function.
 
@@ -82,7 +82,7 @@ We train an **Artificial Neural Network (ANN)** to learn the option pricing func
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 | Layer         | Technology          |
 |---------------|---------------------|
@@ -94,7 +94,7 @@ We train an **Artificial Neural Network (ANN)** to learn the option pricing func
 
 ---
 
-## 🧪 Running the App
+##  Running the App
 
 ### Step 1: Clone the repository
 
@@ -111,7 +111,7 @@ Make sure Flask is installed and the server runs on a port accessible from your 
 npm run dev
 ```
 
-## 📓 Jupyter Notebook Details
+##  Jupyter Notebook Details
 The training logic and data preprocessing are included in the notebook.
 
 You can customize:
@@ -121,10 +121,10 @@ You can customize:
 
 If you prefer to test with synthetic data, uncomment the lines of code that generate it within the notebook.
 
-## 📢 Disclaimer
+##  Disclaimer
 This application is for educational purposes only and does not constitute financial advice.
 
-⚠️ The assumptions behind the Black-Scholes model do not always hold in real-world markets.
+ The assumptions behind the Black-Scholes model do not always hold in real-world markets.
 
 For better real-world modeling, consider:
 - Merton Jump-Diffusion Model
@@ -132,7 +132,7 @@ For better real-world modeling, consider:
 - Monte Carlo Simulations
 - Implied Volatility Calibration from Market Prices
 
-## 🤝 Contributing
+##  Contributing
 We welcome contributions!
 
 If you'd like to:
